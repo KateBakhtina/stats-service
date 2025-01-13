@@ -2,29 +2,29 @@ package ru.netology.stats.service;
 
 public class StatsService {
 
-    public int sumSales(int[] sales) {
-        int sumOfSales = 0;
+    public long sumSales(long[] sales) {
+        long sumOfSales = 0;
         for (int i = 0; i < sales.length; i++) {
             sumOfSales += sales[i];
         }
         return sumOfSales;
     }
 
-    public int avgSales(int[] sales) {
-        int sumOfSales = 0;
+    public long avgSales(long[] sales) {
+        long sumOfSales = 0;
         int lengthOfSales = sales.length;
         for (int i = 0; i < lengthOfSales; i++) {
             sumOfSales += sales[i];
         }
-        int avgOfSales = sumOfSales / lengthOfSales;
+        long avgOfSales = sumOfSales / lengthOfSales;
         return avgOfSales;
     }
 
-    public int numberMonthMaxSales(int[] sales) {
-        int maxOfSales = 0;
+    public int numberMonthMaxSales(long[] sales) {
+        long maxOfSales = 0;
         int numberOfMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            int sale = sales[i];
+            long sale = sales[i];
             if (sale >= maxOfSales) {
                 maxOfSales = sale;
                 numberOfMonth = i + 1;
@@ -33,11 +33,11 @@ public class StatsService {
         return numberOfMonth;
     }
 
-    public int numberMonthMinSales(int[] sales) {
-        int minOfSales = sales[0];
+    public int numberMonthMinSales(long[] sales) {
+        long minOfSales = sales[0];
         int numberOfMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            int sale = sales[i];
+            long sale = sales[i];
             if (sale <= minOfSales) {
                 minOfSales = sale;
                 numberOfMonth = i + 1;
@@ -46,8 +46,8 @@ public class StatsService {
         return numberOfMonth;
     }
 
-    public int countMonthsMinSales(int[] sales) {
-        int avgOfSales = avgSales(sales);
+    public int countMonthsMinSales(long[] sales) {
+        long avgOfSales = avgSales(sales);
         int counterOfMonths = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avgOfSales) {
@@ -57,8 +57,8 @@ public class StatsService {
         return  counterOfMonths;
     }
 
-    public int countMonthsMaxSales(int[] sales) {
-        int avgOfSales = avgSales(sales);
+    public int countMonthsMaxSales(long[] sales) {
+        long avgOfSales = avgSales(sales);
         int counterOfMonths = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avgOfSales) {

@@ -8,26 +8,26 @@ public class StatsServiceTest {
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForSumSales")
-    public void sumSalesTest(int[] sales, int expectedSum) {
+    public void sumSalesTest(long[] sales, long expectedSum) {
 
         StatsService service = new StatsService();
-        int sumSales = service.sumSales(sales);
+        long sumSales = service.sumSales(sales);
 
         Assertions.assertEquals(sumSales, expectedSum);
     }
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForAvgSales")
-    public void avgSalesTest(int[] sales, int expectedAvg) {
+    public void avgSalesTest(long[] sales, long expectedAvg) {
         StatsService service = new StatsService();
-        int avgSales = service.avgSales(sales);
+        long avgSales = service.avgSales(sales);
 
         Assertions.assertEquals(avgSales, expectedAvg);
     }
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForNumberMonthMaxSales")
-    public void numberMonthMaxSalesTest(int[] sales, int expectedNumber) {
+    public void numberMonthMaxSalesTest(long[] sales, int expectedNumber) {
         StatsService service = new StatsService();
         int numberMonth = service.numberMonthMaxSales(sales);
 
@@ -36,7 +36,7 @@ public class StatsServiceTest {
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForNumberMonthMinSales")
-    public void numberMonthMinSalesTest(int[] sales, int expectedNumber) {
+    public void numberMonthMinSalesTest(long[] sales, int expectedNumber) {
         StatsService service = new StatsService();
         int numberMonth = service.numberMonthMinSales(sales);
 
@@ -45,7 +45,7 @@ public class StatsServiceTest {
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForCountMonthsMinSales")
-    public void countMonthsMinSalesTest(int[] sales, int expectedCounter) {
+    public void countMonthsMinSalesTest(long[] sales, int expectedCounter) {
         StatsService service = new StatsService();
         int counterOfMonths = service.countMonthsMinSales(sales);
 
@@ -54,7 +54,7 @@ public class StatsServiceTest {
 
     @ParameterizedTest
     @MethodSource("ru.netology.stats.service.DataForTests#getDataForCountMonthsMaxSales")
-    public void countMonthsMaxSalesTest(int[] sales, int expectedCounter) {
+    public void countMonthsMaxSalesTest(long[] sales, int expectedCounter) {
         StatsService service = new StatsService();
         int counterOfMonth = service.countMonthsMaxSales(sales);
 
